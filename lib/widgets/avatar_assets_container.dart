@@ -7,43 +7,37 @@ class ImageAssetsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Stack(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.grey[350],
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Image.asset(
-              'assets/images/image_avatar.jpg',
-              height: 160,
-              width: 160,
-            ),
-          ),
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                border: Border(
-                  top: BorderSide(color: Colors.blue, width: 5.0),
-                  left: BorderSide(color: Colors.blue, width: 5.0),
+      child: CircleAvatar(
+        radius: 100,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+           Container(
+              width: 200,
+              height: 200,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: SweepGradient(
+                  colors: [
+                    Colors.yellow,
+                    Colors.yellow,
+                    Colors.blue,
+                    Colors.blue,
+                  ],
+                  stops: [0.0, 0.5, 0.5, 1.0],
                 ),
               ),
             ),
-          ),
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                border: Border(
-                  right: BorderSide(color: Colors.yellow, width: 5.0),
-                  bottom: BorderSide(color: Colors.yellow, width: 5.0),
-                ),
+           ClipOval(
+              child: Image.asset(
+                'assets/images/image_avatar.jpg',
+                height: 180,
+                width: 180,
+                fit: BoxFit.cover,
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

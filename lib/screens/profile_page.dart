@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_home_work7/widgets/avatar_assets_container.dart';
+import 'package:flutter_home_work7/widgets/profile_header.dart';
+
 
  class ProfilePage extends StatefulWidget {
    const ProfilePage({super.key});
@@ -11,7 +12,7 @@ import 'package:flutter_home_work7/widgets/avatar_assets_container.dart';
  class _ProfilePageState extends State<ProfilePage> {
    @override
    Widget build(BuildContext context) {
-     return const ImageAssetsContainer();
+     return const ProfileHeader();
    }
  }
 
