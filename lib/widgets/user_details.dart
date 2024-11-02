@@ -57,8 +57,11 @@ class _UserDetailsState extends State<UserDetails> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double paddingValue = screenWidth < 400 ? 8.0 : 16.0;
+
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(paddingValue),
       child: Container(
         decoration: ContainerStyles.containerDecoration,
         padding: const EdgeInsets.all(16.0),

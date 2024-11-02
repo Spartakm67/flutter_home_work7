@@ -23,9 +23,9 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 ProfileHeader(),
                 UserStatusWidget(
-                  projectsCount: 5,
-                  followersCount: 120,
-                  followingCount: 50,
+                  projectsCount: 49,
+                  followersCount: 1640,
+                  followingCount: 750,
                 ),
               ],
             ),

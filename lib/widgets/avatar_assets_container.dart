@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_home_work6/constants/assets_images.dart';
 
 class ImageAssetsContainer extends StatelessWidget {
   const ImageAssetsContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double avatarRadius = screenWidth < 400 ? 80.0 : 110.0;
+    double imageSize = avatarRadius * 1.84;
+
+
     return Center(
       child: CircleAvatar(
-        radius: 100,
+        radius: avatarRadius,
         child: Stack(
           alignment: Alignment.center,
           children: [
            Container(
-              width: 200,
-              height: 200,
+             width: avatarRadius * 2,
+             height: avatarRadius * 2,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: SweepGradient(
@@ -31,8 +35,8 @@ class ImageAssetsContainer extends StatelessWidget {
            ClipOval(
               child: Image.asset(
                 'assets/images/image_avatar.jpg',
-                height: 180,
-                width: 180,
+                height: imageSize,
+                width: imageSize,
                 fit: BoxFit.cover,
               ),
             ),

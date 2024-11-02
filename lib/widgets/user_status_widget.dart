@@ -16,35 +16,38 @@ class UserStatusWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double paddingValue = screenWidth < 400 ? 8.0 : 16.0;
+
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(paddingValue),
       child: Container(
         padding: const EdgeInsets.all(16.0),
         decoration: ContainerStyles.containerDecoration,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildStatistic('Projects', projectsCount),
-            _buildStatistic('Followers', followersCount),
-            _buildStatistic('Following', followingCount),
+            _buildStatistic('Projects', projectsCount, context),
+            _buildStatistic('Followers', followersCount, context),
+            _buildStatistic('Following', followingCount, context),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildStatistic(String label, int count) {
+  Widget _buildStatistic(String label, int count, BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           count.toString(),
-          style: TextStyles.countText,
+          style: TextStyles.countText(context),
         ),
         const SizedBox(height: 4),
         Text(
           label,
-          style: TextStyles.defaultText,
+          style: TextStyles.defaultText(context),
         ),
       ],
     );

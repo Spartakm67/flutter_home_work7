@@ -15,11 +15,15 @@ class TextStyles {
     ],
   );
 
-  static const TextStyle defaultText = TextStyle(
-    fontSize: 20,
-    color: Colors.grey,
-    fontStyle: FontStyle.italic,
-  );
+  static TextStyle defaultText(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize = screenWidth < 400 ? 16 : 22;
+    return TextStyle(
+      fontSize: fontSize,
+      color: Colors.grey,
+      fontStyle: FontStyle.italic,
+    );
+  }
 
   static const TextStyle greetingsText = TextStyle(
     fontSize: 30,
@@ -28,18 +32,26 @@ class TextStyles {
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle userText = TextStyle(
-    fontSize: 18,
-    color: Colors.blue,
-    fontStyle: FontStyle.italic,
-    fontWeight: FontWeight.bold,
-  );
+  static TextStyle userText(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize = screenWidth < 400 ? 16 : 22;
+    return TextStyle(
+      fontSize: fontSize,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.italic,
+      color: Colors.blue,
+    );
+  }
 
-  static const TextStyle countText = TextStyle(
-    fontSize: 24,
-    color: Colors.indigo,
-    fontWeight: FontWeight.bold,
-  );
+  static TextStyle countText(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize = screenWidth < 400 ? 24 : 36;
+    return TextStyle(
+      fontSize: fontSize,
+      fontWeight: FontWeight.bold,
+      color: Colors.indigo,
+    );
+  }
 
   static Text styledText(String text, TextStyle style) {
     return Text(

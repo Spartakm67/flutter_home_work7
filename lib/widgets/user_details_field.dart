@@ -20,10 +20,10 @@ class UserDetailsField extends StatelessWidget {
         Expanded(
           child: TextField(
             controller: controller,
-            style: TextStyles.userText,
+            style: TextStyles.userText(context),
             decoration: InputDecoration(
               labelText: label,
-              labelStyle: TextStyles.defaultText,
+              labelStyle: TextStyles.defaultText(context),
             ),
           ),
         ),
