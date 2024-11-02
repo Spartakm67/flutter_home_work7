@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_home_work7/widgets/user_details_field.dart';
 
 class UserDetails extends StatefulWidget {
   final String name;
@@ -60,55 +61,22 @@ class _UserDetailsState extends State<UserDetails> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  controller: _nameController,
-                  decoration: const InputDecoration(
-                    labelText: 'Name',
-                  ),
-                ),
-              ),
-              IconButton(
-                icon: const Icon(Icons.save, color: Colors.blue,),
-                onPressed: () => _saveData('name'),
-              ),
-            ],
+          UserDetailsField(
+            controller: _nameController,
+            label: 'Name',
+            onSave: _saveData,
           ),
-          const SizedBox(height: 10),
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  controller: _workController,
-                  decoration: const InputDecoration(
-                    labelText: 'Work',
-                  ),
-                ),
-              ),
-              IconButton(
-                icon: const Icon(Icons.save, color: Colors.blue,),
-                onPressed: () => _saveData('work'),
-              ),
-            ],
+          const SizedBox(height: 5),
+          UserDetailsField(
+            controller: _workController,
+            label: 'Work',
+            onSave: _saveData,
           ),
-          const SizedBox(height: 10),
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  controller: _emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'Email',
-                  ),
-                ),
-              ),
-              IconButton(
-                icon: const Icon(Icons.save, color: Colors.blue,),
-                onPressed: () => _saveData('email'),
-              ),
-            ],
+          const SizedBox(height: 5),
+          UserDetailsField(
+            controller: _emailController,
+            label: 'Email',
+            onSave: _saveData,
           ),
         ],
       ),
