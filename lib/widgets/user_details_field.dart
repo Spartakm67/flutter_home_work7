@@ -28,7 +28,7 @@ class UserDetailsField extends StatelessWidget {
           ),
         ),
         IconButton(
-          icon: const Icon(Icons.save, color: Colors.blueAccent),
+          icon: const Icon(Icons.save_as, color: Colors.blueAccent),
           onPressed: () => onSave(),
         ),
       ],

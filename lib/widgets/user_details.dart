@@ -58,27 +58,42 @@ class _UserDetailsState extends State<UserDetails> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          UserDetailsField(
-            controller: _nameController,
-            label: 'Name',
-            onSave: _saveData,
-          ),
-          const SizedBox(height: 5),
-          UserDetailsField(
-            controller: _workController,
-            label: 'Work',
-            onSave: _saveData,
-          ),
-          const SizedBox(height: 5),
-          UserDetailsField(
-            controller: _emailController,
-            label: 'Email',
-            onSave: _saveData,
-          ),
-        ],
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            UserDetailsField(
+              controller: _nameController,
+              label: 'Name',
+              onSave: _saveData,
+            ),
+            const SizedBox(height: 5),
+            UserDetailsField(
+              controller: _workController,
+              label: 'Work',
+              onSave: _saveData,
+            ),
+            const SizedBox(height: 5),
+            UserDetailsField(
+              controller: _emailController,
+              label: 'Email',
+              onSave: _saveData,
+            ),
+          ],
+        ),
       ),
     );
   }
