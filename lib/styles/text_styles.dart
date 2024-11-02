@@ -35,6 +35,12 @@ class TextStyles {
     fontWeight: FontWeight.bold,
   );
 
+  static const TextStyle countText = TextStyle(
+    fontSize: 24,
+    color: Colors.indigo,
+    fontWeight: FontWeight.bold,
+  );
+
   static Text styledText(String text, TextStyle style) {
     return Text(
       text,

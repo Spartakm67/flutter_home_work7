@@ -10,7 +10,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,13 +19,14 @@ class _ProfilePageState extends State<ProfilePage> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           return const SingleChildScrollView(
-            child: Column(children: [
-              ProfileHeader(),
-              UserStatusWidget(
-                projectsCount: 5,
-                followersCount: 120,
-                followingCount: 50,
-              ),
+            child: Column(
+              children: [
+                ProfileHeader(),
+                UserStatusWidget(
+                  projectsCount: 5,
+                  followersCount: 120,
+                  followingCount: 50,
+                ),
               ],
             ),
           );

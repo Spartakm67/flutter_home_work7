@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_home_work7/widgets/user_details_field.dart';
+import 'package:flutter_home_work7/styles/container_styles.dart';
 
 class UserDetails extends StatefulWidget {
   final String name;
@@ -59,18 +60,7 @@ class _UserDetailsState extends State<UserDetails> {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
+        decoration: ContainerStyles.containerDecoration,
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

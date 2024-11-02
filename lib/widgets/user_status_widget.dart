@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_home_work7/widgets/user_status_details.dart';
+import 'package:flutter_home_work7/styles/container_styles.dart';
+import 'package:flutter_home_work7/styles/text_styles.dart';
 
 class UserStatusWidget extends StatelessWidget {
   final int projectsCount;
@@ -19,18 +20,7 @@ class UserStatusWidget extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: Container(
         padding: const EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
+        decoration: ContainerStyles.containerDecoration,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -49,18 +39,12 @@ class UserStatusWidget extends StatelessWidget {
       children: [
         Text(
           count.toString(),
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyles.countText,
         ),
         const SizedBox(height: 4),
         Text(
           label,
-          style: const TextStyle(
-            fontSize: 16,
-            color: Colors.grey,
-          ),
+          style: TextStyles.defaultText,
         ),
       ],
     );
