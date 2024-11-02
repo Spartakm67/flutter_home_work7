@@ -9,15 +9,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  String name = "Spartak Maznytskyi";
-  String work = "Flutter Developer";
-
-  void updateProfile(String newName, String newWork) {
-    setState(() {
-      name = newName;
-      work = newWork;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +18,10 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          return SingleChildScrollView(
+          return const SingleChildScrollView(
             child: Column(children: [
-              const ProfileHeader(),
-              ]
+              ProfileHeader(),
+              ],
             ),
           );
         },
