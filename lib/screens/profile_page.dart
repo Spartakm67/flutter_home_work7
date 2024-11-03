@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_home_work7/widgets/profile_header.dart';
-import 'package:flutter_home_work7/widgets/user_status_widget.dart';
+import 'package:flutter_home_work7/widgets/user_status_widget_stateful.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -18,10 +18,10 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          return const SingleChildScrollView(
+          return SingleChildScrollView(
             child: Column(
               children: [
-                ProfileHeader(),
+                const ProfileHeader(),
                 UserStatusWidget(
                   projectsCount: 49,
                   followersCount: 1640,

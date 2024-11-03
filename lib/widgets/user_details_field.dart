@@ -13,6 +13,21 @@ class UserDetailsField extends StatelessWidget {
     super.key,
   });
 
+  void _validateAndSave(BuildContext context) {
+    final email = controller.text;
+    final emailRegex = RegExp(r'^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$');
+
+    if (label == 'Email' && !emailRegex.hasMatch(email)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please enter a valid email address.'),
+        ),
+      );
+    } else {
+      onSave();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -29,7 +44,7 @@ class UserDetailsField extends StatelessWidget {
         ),
         IconButton(
           icon: const Icon(Icons.save_as, color: Colors.blueAccent),
-          onPressed: () => onSave(),
+          onPressed: () => _validateAndSave(context),
         ),
       ],
     );
