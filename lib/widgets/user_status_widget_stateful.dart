@@ -99,6 +99,7 @@ class _UserStatusWidgetState extends State<UserStatusWidget> {
               onPressed: () => _decrementCount(type),
             ),
             IconButton(
+              icon: const Icon(Icons.add, color: Colors.blueAccent,),
               onPressed: () => _incrementCount(type),
             ),
           ],
