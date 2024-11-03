@@ -22,7 +22,7 @@ class UserStatusWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(paddingValue),
       child: Container(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(paddingValue),
         decoration: ContainerStyles.containerDecoration,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
