@@ -18,10 +18,10 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          return SingleChildScrollView(
+          return const SingleChildScrollView(
             child: Column(
               children: [
-                const ProfileHeader(),
+                ProfileHeader(),
                 UserStatusWidget(
                   projectsCount: 49,
                   followersCount: 1640,
