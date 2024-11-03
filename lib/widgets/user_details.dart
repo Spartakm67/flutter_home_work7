@@ -47,12 +47,6 @@ class _UserDetailsState extends State<UserDetails> {
     String email = _emailController.text;
 
     widget.onSave(name, work, email);
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Changes saved!'),
-      ),
-    );
   }
 
   @override
