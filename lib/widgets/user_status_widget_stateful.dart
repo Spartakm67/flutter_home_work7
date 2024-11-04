@@ -95,7 +95,7 @@ class _UserStatusWidgetState extends State<UserStatusWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
-              icon: const Icon(Icons.remove),
+              icon: const Icon(Icons.remove, color: Colors.redAccent,),
               onPressed: () => _decrementCount(type),
             ),
             IconButton(
