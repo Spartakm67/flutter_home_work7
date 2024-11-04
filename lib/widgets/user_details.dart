@@ -58,7 +58,7 @@ class _UserDetailsState extends State<UserDetails> {
       padding: EdgeInsets.all(paddingValue),
       child: Container(
         decoration: ContainerStyles.containerDecoration,
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(paddingValue),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -67,13 +67,13 @@ class _UserDetailsState extends State<UserDetails> {
               label: 'Name',
               onSave: _saveData,
             ),
-            const SizedBox(height: 5),
+            const Divider(thickness: 1, color: Colors.grey),
             UserDetailsField(
               controller: _workController,
               label: 'Work',
               onSave: _saveData,
             ),
-            const SizedBox(height: 5),
+            const Divider(thickness: 1, color: Colors.grey),
             UserDetailsField(
               controller: _emailController,
               label: 'Email',
