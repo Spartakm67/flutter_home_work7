@@ -16,7 +16,7 @@ class ImageAssetsContainer extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-           Container(
+            Container(
              width: avatarRadius * 2,
              height: avatarRadius * 2,
               decoration: const BoxDecoration(

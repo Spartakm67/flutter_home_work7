@@ -14,23 +14,27 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.3),
         title: const Text('User Profile'),
       ),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          return const SingleChildScrollView(
-            child: Column(
-              children: [
-                ProfileHeader(),
-                UserStatusWidget(
-                  projectsCount: 49,
-                  followersCount: 1640,
-                  followingCount: 750,
-                ),
-              ],
-            ),
-          );
-        },
+      body: Container(
+        color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return const SingleChildScrollView(
+              child: Column(
+                children: [
+                  ProfileHeader(),
+                  UserStatusWidget(
+                    projectsCount: 49,
+                    followersCount: 1640,
+                    followingCount: 750,
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }

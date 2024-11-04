@@ -26,6 +26,7 @@ class _ProfileHeaderState extends State<ProfileHeader> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 8),
         const ImageAssetsContainer(),
         UserDetails(
           name: name,

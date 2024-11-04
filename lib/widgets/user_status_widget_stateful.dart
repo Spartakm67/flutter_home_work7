@@ -61,7 +61,9 @@ class _UserStatusWidgetState extends State<UserStatusWidget> {
     double paddingValue = screenWidth < 400 ? 8.0 : 16.0;
 
     return Padding(
-      padding: EdgeInsets.all(paddingValue),
+      padding: EdgeInsets.only(
+          left: paddingValue, right: paddingValue, bottom: paddingValue,
+      ),
       child: Container(
         padding: EdgeInsets.all(paddingValue),
         decoration: ContainerStyles.containerDecoration,
@@ -77,7 +79,8 @@ class _UserStatusWidgetState extends State<UserStatusWidget> {
     );
   }
 
-  Widget _buildStatistic(String label, int count, String type, BuildContext context) {
+  Widget _buildStatistic(
+      String label, int count, String type, BuildContext context,) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -95,11 +98,17 @@ class _UserStatusWidgetState extends State<UserStatusWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
-              icon: const Icon(Icons.remove, color: Colors.redAccent,),
+              icon: const Icon(
+                Icons.remove,
+                color: Colors.redAccent,
+              ),
               onPressed: () => _decrementCount(type),
             ),
             IconButton(
-              icon: const Icon(Icons.add, color: Colors.blueAccent,),
+              icon: const Icon(
+                Icons.add,
+                color: Colors.blueAccent,
+              ),
               onPressed: () => _incrementCount(type),
             ),
           ],

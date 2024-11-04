@@ -14,7 +14,9 @@ class ProfileApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const ProfilePage(),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.indigo,
+        ),
       ),
     );
   }
