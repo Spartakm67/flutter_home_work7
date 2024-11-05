@@ -62,7 +62,9 @@ class _UserStatusWidgetState extends State<UserStatusWidget> {
 
     return Padding(
       padding: EdgeInsets.only(
-          left: paddingValue, right: paddingValue, bottom: paddingValue,
+        left: paddingValue,
+        right: paddingValue,
+        bottom: paddingValue,
       ),
       child: Container(
         padding: EdgeInsets.all(paddingValue),
@@ -80,7 +82,11 @@ class _UserStatusWidgetState extends State<UserStatusWidget> {
   }
 
   Widget _buildStatistic(
-      String label, int count, String type, BuildContext context,) {
+    String label,
+    int count,
+    String type,
+    BuildContext context,
+  ) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

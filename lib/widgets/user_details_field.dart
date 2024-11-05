@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_home_work7/styles/text_styles.dart';
+import 'package:flutter_home_work7/resources/constants.dart';
 
 class UserDetailsField extends StatelessWidget {
   final TextEditingController controller;
@@ -12,21 +13,6 @@ class UserDetailsField extends StatelessWidget {
     required this.onSave,
     super.key,
   });
-
-  void _validateAndSave(BuildContext context) {
-    final email = controller.text;
-    final emailRegex = RegExp(r'^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$');
-
-    if (label == 'Email' && !emailRegex.hasMatch(email)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please enter a valid email address.'),
-        ),
-      );
-    } else {
-      onSave();
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,5 +34,19 @@ class UserDetailsField extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void _validateAndSave(BuildContext context) {
+    final email = controller.text;
+
+    if (label == 'Email' && !AppConstants.emailRegex.hasMatch(email)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please enter a valid email address.'),
+        ),
+      );
+    } else {
+      onSave();
+    }
   }
 }

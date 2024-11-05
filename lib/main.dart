@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_home_work7/screens/profile_page.dart';
 
 void main() {
-  runApp(const ProfileApp(),);
+  runApp(
+    const ProfileApp(),
+  );
 }
 
 class ProfileApp extends StatelessWidget {
